@@ -16,10 +16,15 @@ public class CaseInformation
     private ArrayList<AlternativeInformation> alternativeInformationList; 
     private InquiryInformation inquiryInformation;
     private ArrayList<DiaryEntry> diary;
-    
+//    private ArrayList<int> cosentList;
+
     protected CaseInformation()
     {
         
     }
-    
+
+    protected boolean addConsent()
+    {
+        return true;
+    }
 }

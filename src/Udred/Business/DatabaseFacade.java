@@ -42,5 +42,25 @@ public class DatabaseFacade
 //        return ;
 //
 //    }
+
+    protected boolean removeInformationConsent()
+    {
+        return true;
+    }
+
+    protected boolean addInformationConsent()
+    {
+        return true;
+    }
+
+    protected boolean removeCaseConsent()
+    {
+        return true;
+    }
+
+    protected boolean addCaseConsent()
+    {
+        return true;
+    }
     
 }

@@ -15,14 +15,22 @@ public class AlternativeInformation
 {
     private String title; 
     private String subject;
-    private String Content;
+    private String content;
+    private boolean informationConsent;
     private Date alternativeInformationTime;
 
-    protected AlternativeInformation(String title, String subject, String Content)
+    protected AlternativeInformation(String title, String subject, String content)
     {
         this.title = title;
         this.subject = subject;
-        this.Content = Content;
+        this.content = content;
+    }
+    protected AlternativeInformation(String title, String subject, String content, boolean informationConsent)
+    {
+        this.informationConsent = informationConsent;
+        this.title = title;
+        this.subject = subject;
+        this.content = content;
     }
     
     protected void getInformation()

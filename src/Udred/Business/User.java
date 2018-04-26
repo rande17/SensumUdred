@@ -28,11 +28,11 @@ public class User
         return 0;
     }
     
-//    protected void addCase(Case case)
+//    protected void addCase(case Case)
 //    {
 //
 //    }
-//    protected void removeCase (Case case)
+//    protected void removeCase (case Case)
 //    {
 //
 //    }
