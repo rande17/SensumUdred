@@ -35,3 +35,11 @@ hs_err_pid*
 .idea/
 2.SemesterProjekt2018.iml
 out/
+
+
+#nbproject/private/
+#build/
+#nbbuild/
+#dist/
+#nbdist/
+#.nb-gradle/
