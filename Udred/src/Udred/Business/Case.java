@@ -63,14 +63,16 @@ public class Case {
         return caseType;
     }
 
+    /**
+     * Needs proper debugging, havent been able to test this correctly
+     * @param caseType takes a type of case that should be in enum CaseTypeEnum
+     */
     protected void setCaseType(String caseType) {
-        // if-statement for at sætte den rigtige casetype
-        if (caseType.toLowerCase().equals("social")) {
-            this.caseType = CaseTypeEnum.SOCIALISSUES;
-        } else if (caseType.toLowerCase().equals("psychology")) {
-            this.caseType = CaseTypeEnum.PSYCHOLOGICAL;
-        } else if (caseType.toCharArray().equals("physical")) {
-            this.caseType = CaseTypeEnum.PHYSICALDISABILITY;
+        for (CaseTypeEnum caseT : CaseTypeEnum.values()) {
+            if (caseType.toLowerCase().equals(caseT.toString())) {
+                this.caseType = CaseTypeEnum.valueOf(caseType.toLowerCase());
+                break; 
+            }
         }
     }
 
@@ -89,7 +91,7 @@ public class Case {
     protected CaseInformation getCaseInformation() {
         return caseInformation;
     }
-    
+
     public void setCaseWorker(User caseWorker) {
         this.caseWorker = caseWorker;
     }
