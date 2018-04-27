@@ -9,9 +9,20 @@ package Udred.Business;
  *
  * @author Linea Hoffmann
  */
-enum CaseTypeEnum
-{
-    PHYSICALDISABILITY,
-    SOCIALISSUES,
-    PSYCHOLOGICAL;  
+public enum CaseTypeEnum {
+
+    PHYSICALDISABILITY("social"),
+    SOCIALISSUES("physical"),
+    PSYCHOLOGICAL("psychology");
+
+    private String caseType;
+
+    CaseTypeEnum(String caseType) {
+        this.caseType = caseType;
+    }
+
+    @Override
+    public String toString() {
+        return caseType;
+    }
 }
