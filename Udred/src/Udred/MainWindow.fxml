@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Udred.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Udred.Controller">
    <children>
       <Button fx:id="btnConnectToDatabase" mnemonicParsing="false" onAction="#ClickBtnConnection" text="Connect to database" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       <TextArea fx:id="txtInfoBox" minHeight="400.0" prefHeight="400.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
