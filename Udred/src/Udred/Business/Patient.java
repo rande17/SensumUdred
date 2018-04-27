@@ -6,10 +6,12 @@
 package Udred.Business;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Linea Hoffmann
+ * @author Simon Pontoppidan
  */
 public class Patient
 {
@@ -19,23 +21,53 @@ public class Patient
     private Address patientAddress;
     private int patientTelephone;
     private int patientCPR;
-    private ArrayList<Guardian> patientGuardians;
+    private List<Guardian> patientGuardians;
+    
+    /**
+     * Constructor for Patient
+     * @param patientName
+     * @param patientCPR
+     * @param patientTelephone
+     * @param address 
+     */
 
-    protected Patient(String patientName, int patientCPR, int patientTelephone)
+    protected Patient(String patientName, int patientCPR, int patientTelephone, Address address)
     {
         this.patientName = patientName;
         this.patientCPR = patientCPR;
         this.patientTelephone = patientTelephone;
+        this.patientGuardians = new ArrayList<>();
+        this.patientAddress = address;
                 
     }
     
     protected void addGuardian (String name, int CPR, int telephone)
     {
+        this.patientGuardians.add(new Guardian(name, CPR, telephone));  
+    }
+    
+    protected void addGuardian (String name, int CPR, int telephone, Address address)
+    {
+        this.patientGuardians.add(new Guardian(name, CPR, telephone, address));   
+    }
+    
+    protected void setGuardianAddress(Guardian guardian, Address address)
+    {
+        guardian.setGuardianaddress(address);
         
     }
     
     protected void removeGuardian(int CPR)
     {
+        for(Guardian guardian : this.patientGuardians)
+        {
+            if (guardian.getGuardianCPR() == CPR)
+            {
+                patientGuardians.remove(guardian);
+                break;
+            }
+
+        }
         
     }
     
@@ -74,10 +106,10 @@ public class Patient
         return patientCPR;
     }
 
-//    public ArrayList[] getPatientGuardians()
-//    {
-//        return ;
-//    }
+    public List<Guardian> getPatientGuardians()
+    {
+        return patientGuardians;
+    }
     
     
 }

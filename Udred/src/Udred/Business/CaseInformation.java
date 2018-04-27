@@ -6,20 +6,56 @@
 package Udred.Business;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Linea Hoffmann
+ * @author Simon Pontoppidan
  */
 public class CaseInformation
 {
-    private ArrayList<AlternativeInformation> alternativeInformationList; 
+    private List<AlternativeInformation> alternativeInformationList;
     private InquiryInformation inquiryInformation;
-    private ArrayList<DiaryEntry> diary;
+    private List<DiaryEntry> diaryEntrys;
     
-    protected CaseInformation()
+    /**
+     * Constructor for CaseInformation
+     * @param inquiryInformation 
+     */
+    
+    protected CaseInformation(InquiryInformation inquiryInformation)
     {
-        
+        this.alternativeInformationList = new ArrayList<AlternativeInformation>();
+        this.inquiryInformation = inquiryInformation;
+        this.diaryEntrys = new ArrayList<DiaryEntry>();
+                
     }
+    
+    protected void addAlternativeInformation(AlternativeInformation alternativeInformation)
+    {
+        this.alternativeInformationList.add(alternativeInformation);
+    }
+    
+    protected void addDiaryEntry(DiaryEntry diaryEntry)
+    {
+        this.diaryEntrys.add(diaryEntry);
+    }
+
+    protected List<AlternativeInformation> getAlternativeInformation()
+    {
+        return this.alternativeInformationList;
+    }
+
+    protected InquiryInformation getInquiryInformation()
+    {
+        return this.inquiryInformation;
+    }
+
+    protected List<DiaryEntry> getDiary()
+    {
+        return this.diaryEntrys;
+    }
+    
     
 }

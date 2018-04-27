@@ -8,15 +8,24 @@ package Udred.Business;
 /**
  *
  * @author Linea Hoffmann
+ * @author Simon Pontoppidan
  */
 public class Address
 {
     private int zipCode; 
     private String city;
     private String streetName;
-    private int houseNumber;
+    private String houseNumber;
     
-    protected Address(String streetName, int houseNumber, String city, int zipCode)
+    /**
+     * Constructor for Address
+     * @param streetName
+     * @param houseNumber
+     * @param city
+     * @param zipCode 
+     */
+    
+    protected Address(String streetName, String houseNumber, String city, int zipCode)
     {
         this.streetName = streetName;
         this.houseNumber = houseNumber;
@@ -55,12 +64,12 @@ public class Address
         this.streetName = streetName;
     }
 
-    protected int getHouseNumber()
+    protected String getHouseNumber()
     {
         return houseNumber;
     }
     
-    protected void setHouseNumber(int houseNumber)
+    protected void setHouseNumber(String houseNumber)
     {
         this.houseNumber = houseNumber;
     } 

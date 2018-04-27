@@ -5,9 +5,12 @@
  */
 package Udred.Business;
 
+import com.sun.org.apache.bcel.internal.generic.AALOAD;
+
 /**
  *
  * @author Linea Hoffmann
+ * @author Simon Pontoppidan
  */
 public class Guardian
 {
@@ -16,11 +19,35 @@ public class Guardian
     private Address guardianaddress;
     private int guardianTelephone;
     
+    /**
+     * First constructor for Guardian, without GUardianAddress
+     * @param guardianName
+     * @param guardianCPR
+     * @param guardianTelephone 
+     */
+    
     protected Guardian(String guardianName, int guardianCPR, int guardianTelephone)
     {
         this.guardianName = guardianName;
         this.guardianCPR = guardianCPR;
         this.guardianTelephone = guardianTelephone;
+        this.guardianaddress = null;
+    }
+    
+    /**
+     * Extra constructor with GuardianAddress. 
+     * @param guardianName
+     * @param guardianCPR
+     * @param guardianTelephone
+     * @param guardianAddress 
+     */
+    
+    protected Guardian(String guardianName, int guardianCPR, int guardianTelephone, Address guardianAddress)
+    {
+        this.guardianName = guardianName;
+        this.guardianCPR = guardianCPR;
+        this.guardianTelephone = guardianTelephone;
+        this.guardianaddress = guardianAddress;
     }
 
     protected String getGuardianName()
@@ -46,6 +73,11 @@ public class Guardian
     protected void setGuardianTelephone(int guardianTelephone)
     {
         this.guardianTelephone = guardianTelephone;
+    }
+
+    protected void setGuardianaddress(Address address)
+    {
+        this.guardianaddress = address;
     }
     
 }

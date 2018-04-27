@@ -5,17 +5,28 @@
  */
 package Udred.Business;
 
+import java.util.Date;
+
 /**
  *
  * @author Linea Hoffmann
+ * @author Simon Pontoppidan
  */
 public class InquiryInformation
 {
     private String inquiry;
+    private Date inquiryDate;
     
-    protected InquiryInformation(String inquiry)
+    /**
+     * Constructor for InquiryInformation
+     * @param inquiry
+     * @param inquiryDate 
+     */
+    
+    protected InquiryInformation(String inquiry, Date inquiryDate)
     {
-        
+        this.inquiry = this.inquiry;
+        this.inquiryDate = new Date(); //Sets date to the time this object was created
     }
 
     protected String getInquiry()
@@ -27,7 +38,10 @@ public class InquiryInformation
     {
         this.inquiry = inquiry;
     }
-    
-    
-    
+
+    protected Date getInquiryDate()
+    {
+        return inquiryDate;
+    }
+     
 }
