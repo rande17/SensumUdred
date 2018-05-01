@@ -26,9 +26,8 @@ public class Meeting
      * @param patient : The patient that is tied to the meeting
      * @param meetingAddress : The address of the meeting
      * @param partRepresentive : The part representative that is present at the meeting
-     * @param assessorList : the list of Assessors that are tied to the meeting
      */
-    protected Meeting(Date meetingTime, Patient patient, Address meetingAddress, PartRepresentive partRepresentive, ArrayList<Assessor> assessorList)
+    protected Meeting(Date meetingTime, Patient patient, Address meetingAddress, PartRepresentive partRepresentive)
     {
         this.meetingTime = meetingTime;
         this.patient = patient;
