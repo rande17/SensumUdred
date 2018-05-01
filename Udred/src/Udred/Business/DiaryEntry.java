@@ -18,14 +18,40 @@ public class DiaryEntry
     private Date diaryTimeStamp;
     private DiaryEntryTypeEnum type;
 
-    protected DiaryEntry(String topic, String content, Date diaryTimeStamp, DiaryEntryTypeEnum type)
+    /**
+     * Constructor for DiaryEntry
+     * @param topic : The topic of the diaryEntry
+     * @param content : The information that the user thinks is important for the diaryEntry
+     * @param type : The type of diaryEntry, defined by an Enumerator
+     */
+
+    protected DiaryEntry(String topic, String content, DiaryEntryTypeEnum type)
     {
         this.topic = topic;
         this.content = content;
-        this.diaryTimeStamp = diaryTimeStamp;
+        this.diaryTimeStamp = new Date(); // Creates a timestamp of the moment the diaryEntry was created
         this.type = type;
     }
-    
-    
-    
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public Date getDiaryTimeStamp() {
+        return diaryTimeStamp;
+    }
+
+    public DiaryEntryTypeEnum getType() {
+        return type;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+
 }
