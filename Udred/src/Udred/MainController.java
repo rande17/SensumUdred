@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-public class Controller {
+public class MainController {
     @FXML
     private Button btnConnectToDatabase;
     @FXML
