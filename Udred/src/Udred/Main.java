@@ -1,5 +1,6 @@
 package Udred;
 
+import java.io.File;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +14,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
         primaryStage.setTitle("Sensum Udred");
-        primaryStage.getIcons().add(new Image("/Udred/EG.png"));
+        primaryStage.getIcons().add(new Image(File.pathSeparator+"Udred"+File.pathSeparator+"EG.png"));
 //        primaryStage.getIcons().add(new Image("file:EG.png"));
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
