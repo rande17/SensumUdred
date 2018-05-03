@@ -1,26 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Udred.Controller">
-   <children>
-      <Button fx:id="btnConnectToDatabase" mnemonicParsing="false" onAction="#ClickBtnConnection" text="Connect to database" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-      <TextArea fx:id="txtInfoBox" minHeight="400.0" prefHeight="400.0" prefWidth="400.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-   </children>
-   <rowConstraints>
-      <RowConstraints minHeight="10.0" prefHeight="30.0" />
-      <RowConstraints />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" />
-      <RowConstraints />
-      <RowConstraints minHeight="10.0" prefHeight="30.0" />
-   </rowConstraints>
-   <columnConstraints>
-      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints />
-      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-   </columnConstraints>
-</GridPane>
+<BorderPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Udred.MainController">
+   <center>
+      <GridPane maxWidth="1.7976931348623157E308">
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="800.0" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints fillHeight="false" vgrow="NEVER" />
+         </rowConstraints>
+         <children>
+             <fx:include fx:id="embeddedCaseView" maxWidth="1.7976931348623157E308" source="CaseEditor.fxml" />
+         </children>
+      </GridPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Fil">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Opret Sag" />
+              <MenuItem mnemonicParsing="false" text="Åben Sag" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Luk" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Rediger">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Klip" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Hjælp">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
