@@ -8,6 +8,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -16,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxWidth="1.7976931348623157E308" styleClass="admin" stylesheets="@MainStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Udred.CaseEditorController">
+<GridPane maxWidth="1.7976931348623157E308" styleClass="admin" stylesheets="@MainStyle.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Udred.CaseFinderController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
       <ColumnConstraints />
@@ -43,7 +45,7 @@
                      </rowConstraints>
                      <children>
                         <Label text="SagsID Nummer:" />
-                        <TextField editable="false" text="050618-143021" GridPane.rowIndex="1">
+                        <TextField promptText="CPR" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets right="5.0" />
                            </GridPane.margin>
@@ -64,16 +66,16 @@
                      <children>
                         <Label text="Oprettet:" />
                         <Label text="Afsluttet:" GridPane.columnIndex="1" />
-                        <DatePicker editable="false" maxWidth="1.7976931348623157E308" promptText="Start dato" GridPane.rowIndex="1">
+                        <DatePicker maxWidth="1.7976931348623157E308" promptText="Start dato" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets right="5.0" />
                            </GridPane.margin>
                         </DatePicker>
-                        <DatePicker editable="false" maxWidth="1.7976931348623157E308" promptText="Slut dato" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <DatePicker maxWidth="1.7976931348623157E308" promptText="Slut dato" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
                   <Separator prefWidth="200.0" />
-                  <TitledPane text="BORGER">
+                  <TitledPane expanded="false" text="BORGER">
                      <content>
                         <GridPane vgap="10.0">
                            <columnConstraints>
@@ -86,31 +88,6 @@
                            </rowConstraints>
                            <children>
                               <VBox fx:id="vBoxCitizens" spacing="5.0" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" />
-                              <Button fx:id="btnAddCitizen" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addCitizen" GridPane.rowIndex="1">
-                                 <graphic>
-                                    <GridPane>
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="25.0" prefWidth="25.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints vgrow="SOMETIMES" />
-                                      </rowConstraints>
-                                       <children>
-                                          <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="TILFØJ BORGER">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="+" GridPane.columnIndex="1">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </GridPane>
-                                 </graphic>
-                              </Button>
                            </children>
                         </GridPane>
                      </content>
@@ -119,7 +96,7 @@
                      </font>
                   </TitledPane>
                   <Separator prefWidth="200.0" />
-                  <TitledPane text="SAGSBEHANDLER">
+                  <TitledPane expanded="false" text="SAGSBEHANDLER">
                      <content>
                         <GridPane vgap="10.0">
                            <columnConstraints>
@@ -132,31 +109,6 @@
                            </rowConstraints>
                            <children>
                               <VBox fx:id="vBoxCaseWorkers" spacing="5.0" />
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addCaseWorker" GridPane.rowIndex="1">
-                                 <graphic>
-                                    <GridPane>
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="25.0" prefWidth="25.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <children>
-                                          <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="TILFØJ SAGSBEHANDLER">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="+" GridPane.columnIndex="1">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </GridPane>
-                                 </graphic>
-                              </Button>
                            </children>
                         </GridPane>
                      </content>
@@ -165,7 +117,7 @@
                      </font>
                   </TitledPane>
                   <Separator prefWidth="200.0" />
-                  <TitledPane text="SAMTYKKE">
+                  <TitledPane expanded="false" text="SAMTYKKE">
                      <content>
                         <GridPane>
                            <columnConstraints>
@@ -185,7 +137,7 @@
                      </font>
                   </TitledPane>
                   <Separator prefWidth="200.0" />
-                  <TitledPane text="SAGS INFORMATION">
+                  <TitledPane expanded="false" text="SAGS INFORMATION">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -201,37 +153,12 @@
                            </rowConstraints>
                            <children>
                               <VBox fx:id="vBoxCaseInformation" spacing="5.0" />
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addCaseInformation" GridPane.rowIndex="1">
-                                 <graphic>
-                                    <GridPane>
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="25.0" prefWidth="25.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <children>
-                                          <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="TILFØJ SAGS INFORMATION">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="+" GridPane.columnIndex="1">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </GridPane>
-                                 </graphic>
-                              </Button>
                            </children>
                         </GridPane>
                      </content>
                   </TitledPane>
                   <Separator prefWidth="200.0" />
-                  <TitledPane text="MØDER">
+                  <TitledPane expanded="false" text="MØDER">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -247,46 +174,30 @@
                            </rowConstraints>
                            <children>
                               <VBox fx:id="vBoxMeetings" spacing="5.0" />
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addMeeting" GridPane.rowIndex="1">
-                                 <graphic>
-                                    <GridPane>
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="25.0" prefWidth="25.0" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <children>
-                                          <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="TILFØJ MØDE">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="+" GridPane.columnIndex="1">
-                                             <font>
-                                                <Font name="Arial Bold" size="20.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </GridPane>
-                                 </graphic>
-                              </Button>
                            </children>
                         </GridPane>
                      </content>
                   </TitledPane>
                   <Separator prefWidth="200.0" />
-                  <Button mnemonicParsing="false" text="Gem" />
+                  <Button mnemonicParsing="false" text="Søg" />
+                  <Separator prefWidth="200.0" />
+                  <TableView prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="SagsID" />
+                      <TableColumn prefWidth="75.0" text="Status" />
+                        <TableColumn prefWidth="75.0" text="Oprettet" />
+                        <TableColumn prefWidth="75.0" text="Afsluttet" />
+                        <TableColumn prefWidth="75.0" text="Borger CPR" />
+                        <TableColumn prefWidth="75.0" text="Borger Fornavn" />
+                        <TableColumn prefWidth="75.0" text="Borger Efternavn" />
+                    </columns>
+                  </TableView>
                </children>
             </VBox>
          </content>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
-         <GridPane.margin>
-            <Insets />
-         </GridPane.margin>
       </ScrollPane>
    </children>
 </GridPane>

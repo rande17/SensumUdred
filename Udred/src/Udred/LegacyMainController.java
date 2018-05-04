@@ -10,11 +10,13 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-public class MainController {
+public class LegacyMainController {
     @FXML
     private Button btnConnectToDatabase;
     @FXML
     private TextArea txtInfoBox;
+
+
 
     public void ClickBtnConnection()
     {

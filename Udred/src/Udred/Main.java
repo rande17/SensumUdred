@@ -11,7 +11,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LoginWindow.fxml"));
         primaryStage.setTitle("Sensum Udred");
         primaryStage.getIcons().add(new Image("/Udred/EG.png"));
 //        primaryStage.getIcons().add(new Image("file:EG.png"));
