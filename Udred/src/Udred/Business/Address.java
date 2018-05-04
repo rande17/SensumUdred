@@ -12,10 +12,12 @@ package Udred.Business;
  */
 public class Address
 {
+    //Test
     private int zipCode; 
     private String city;
     private String streetName;
     private String houseNumber;
+   
     
     /**
      * Constructor for Address
