@@ -1,11 +1,10 @@
 package Udred;
 
-import java.io.File;
+import Udred.Data.PostgresHelper;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -18,6 +17,8 @@ public class Main extends Application {
 //        primaryStage.getIcons().add(new Image("file:EG.png"));
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        PostgresHelper DB = new PostgresHelper();
+        DB.connect();
     }
 
 
