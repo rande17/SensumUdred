@@ -55,33 +55,33 @@ public class CaseEditorController {
 
         CustomControl cstCitizen = new CustomControl();
         cstCitizen.getLabel().setText("Karsten Breddahl Laursen");
-        Node citizenNode = (Node)FXMLLoader.load(getClass().getResource("caseTemplates" + File.separator +"Citizen.fxml"));
+        Node citizenNode = (Node)FXMLLoader.load(getClass().getResource("/Udred/caseTemplates/Citizen.fxml"));
         cstCitizen.setContent(citizenNode);
         vBoxCitizens.getChildren().add(cstCitizen);
 
 
         CustomControl cstCaseWorker = new CustomControl();
         cstCaseWorker.getLabel().setText("Jenny Corvenious Jensen");
-        Node caseWorkerNode = (Node)FXMLLoader.load(getClass().getResource("caseTemplates" + File.separator +"CaseWorker.fxml"));
+        Node caseWorkerNode = (Node)FXMLLoader.load(getClass().getResource("/Udred/caseTemplates/CaseWorker.fxml"));
         cstCaseWorker.setContent(caseWorkerNode);
         vBoxCaseWorkers.getChildren().add(cstCaseWorker);
 
 
         CustomControl cstCaseInformation = new CustomControl();
         cstCaseInformation.getLabel().setText("Information fra Sygehus");
-        Node caseInformationNode = (Node)FXMLLoader.load(getClass().getResource("caseTemplates" + File.separator +"CaseInformation.fxml"));
+        Node caseInformationNode = (Node)FXMLLoader.load(getClass().getResource("/Udred/caseTemplates/CaseInformation.fxml"));
         cstCaseInformation.setContent(caseInformationNode);
         vBoxCaseInformation.getChildren().add(cstCaseInformation);
 
         CustomControl cstCaseInformation2 = new CustomControl();
         cstCaseInformation2.getLabel().setText("Midligtidlig addresse ændring");
-        Node caseInformationNode2 = (Node)FXMLLoader.load(getClass().getResource("caseTemplates" + File.separator +"CaseInformation.fxml"));
+        Node caseInformationNode2 = (Node)FXMLLoader.load(getClass().getResource("/Udred/caseTemplates/CaseInformation.fxml"));
         cstCaseInformation2.setContent(caseInformationNode2);
         vBoxCaseInformation.getChildren().add(cstCaseInformation2);
 
         CustomControl cstMeeting = new CustomControl();
         cstMeeting.getLabel().setText("04/05-2018");
-        Node meetingNode = (Node)FXMLLoader.load(getClass().getResource("caseTemplates" + File.separator +"Meeting.fxml"));
+        Node meetingNode = (Node)FXMLLoader.load(getClass().getResource("/Udred/caseTemplates/Meeting.fxml"));
         cstMeeting.setContent(meetingNode);
         vBoxMeetings.getChildren().add(cstMeeting);
 
@@ -101,10 +101,9 @@ public class CaseEditorController {
     }
 
     public void addCitizen() throws IOException {
-        System.out.println(getClass().getResource("caseTemplates" + File.separator +"Citizen.fxml"));
         CustomControl cst = new CustomControl();
         cst.getLabel().setText("Ny Borger");
-        Node citizen = (Node)FXMLLoader.load(getClass().getResource("caseTemplates" + File.separator +"Citizen.fxml"));
+        Node citizen = (Node)FXMLLoader.load(getClass().getResource("/Udred/caseTemplates/Citizen.fxml"));
         cst.setContent(citizen);
         vBoxCitizens.getChildren().add(cst);
     }
@@ -112,21 +111,23 @@ public class CaseEditorController {
     public void addCaseWorker() throws IOException {
         CustomControl cst = new CustomControl();
         cst.getLabel().setText("Ny Sagsbehandler");
-        Node citizen = (Node)FXMLLoader.load(getClass().getResource("caseTemplates" + File.separator +"CaseWorker.fxml"));
+        Node citizen = (Node)FXMLLoader.load(getClass().getResource("/Udred/caseTemplates/CaseWorker.fxml"));
         cst.setContent(citizen);
         vBoxCaseWorkers.getChildren().add(cst);
     }
+
     public void addCaseInformation() throws IOException {
         CustomControl cst = new CustomControl();
         cst.getLabel().setText("Ny Information");
-        Node citizen = (Node)FXMLLoader.load(getClass().getResource("caseTemplates" + File.separator +"CaseInformation.fxml"));
+        Node citizen = (Node)FXMLLoader.load(getClass().getResource("/Udred/caseTemplates/CaseInformation.fxml"));
         cst.setContent(citizen);
         vBoxCaseInformation.getChildren().add(cst);
     }
+
     public void addMeeting() throws IOException {
         CustomControl cst = new CustomControl();
         cst.getLabel().setText("Nyt Møde");
-        Node citizen = (Node)FXMLLoader.load(getClass().getResource("caseTemplates" + File.separator +"Meeting.fxml"));
+        Node citizen = (Node)FXMLLoader.load(getClass().getResource("/Udred/caseTemplates/Meeting.fxml"));
         cst.setContent(citizen);
         vBoxMeetings.getChildren().add(cst);
     }

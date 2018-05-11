@@ -36,7 +36,7 @@
          <content>
             <VBox maxWidth="1.7976931348623157E308" spacing="5.0">
                <children>
-                  <TitledPane accessibleText="Borgerens samtykke erklæring" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit">
+                  <TitledPane accessibleText="Borgerens samtykke erklæring" expanded="false" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -118,7 +118,7 @@
                      </content>
                   </TitledPane>
                   <Separator prefWidth="200.0" />
-                  <TitledPane accessibleText="Denne sags borger" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit">
+                  <TitledPane accessibleText="Denne sags borger" expanded="false" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit">
                      <content>
                         <GridPane vgap="10.0">
                            <columnConstraints>
@@ -183,7 +183,7 @@
                      </graphic>
                   </TitledPane>
                   <Separator prefWidth="200.0" />
-                  <TitledPane accessibleText="Denne sags sagsbehandler" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit">
+                  <TitledPane accessibleText="Denne sags sagsbehandler" expanded="false" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit">
                      <content>
                         <GridPane vgap="10.0">
                            <columnConstraints>
@@ -245,7 +245,7 @@
                      </graphic>
                   </TitledPane>
                   <Separator accessibleText="Samtykke fra borgeren" prefWidth="200.0" />
-                  <TitledPane accessibleText="Borgerens samtykke erklæring" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit">
+                  <TitledPane accessibleText="Borgerens samtykke erklæring" expanded="false" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit">
                      <content>
                         <GridPane>
                            <columnConstraints>
@@ -284,7 +284,7 @@
                      </graphic>
                   </TitledPane>
                   <Separator prefWidth="200.0" />
-                  <TitledPane onMouseEntered="#mouseEnter" onMouseExited="#mouseExit">
+                  <TitledPane expanded="false" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -346,7 +346,7 @@
                      </graphic>
                   </TitledPane>
                   <Separator prefWidth="200.0" />
-                  <TitledPane onMouseEntered="#mouseEnter" onMouseExited="#mouseExit">
+                  <TitledPane expanded="false" onMouseEntered="#mouseEnter" onMouseExited="#mouseExit">
                      <font>
                         <Font size="14.0" />
                      </font>
